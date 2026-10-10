@@ -1,0 +1,6 @@
+{
+  "name": "Phone Whisper",
+  "description": "Offline speech recognition studio with Sherpa-ONNX model configurations: GigaAM-v3, Parakeet-TDT, FastConformer, SenseVoice, and Whisper with dynamic switching and real-time monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
