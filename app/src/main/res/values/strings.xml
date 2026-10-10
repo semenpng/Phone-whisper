@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Phone Whisper</string>
+    <string name="accessibility_description">Phone Whisper Dictation: records audio with sherpa-onnx, transcribes locally, and inserts text directly into focused fields.</string>
 </resources>

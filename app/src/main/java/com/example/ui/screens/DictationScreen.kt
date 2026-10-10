@@ -313,7 +313,14 @@ fun DictationScreen(
             }
 
             OutlinedButton(
-                onClick = { viewModel.setFloatingOverlayActive(!isFloatingOverlay) },
+                onClick = {
+                    try {
+                        val intent = Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS)
+                        context.startActivity(intent)
+                    } catch (e: Exception) {
+                        viewModel.setFloatingOverlayActive(!isFloatingOverlay)
+                    }
+                },
                 modifier = Modifier
                     .weight(1f)
                     .testTag("toggle_floating_mode_button"),
@@ -327,7 +334,7 @@ fun DictationScreen(
             ) {
                 Icon(Icons.Default.Layers, contentDescription = "Floating mode", modifier = Modifier.size(16.dp), tint = VioletAccent)
                 Spacer(modifier = Modifier.width(6.dp))
-                Text(if (isFloatingOverlay) "Overlay: ON" else "Floating Mode", fontSize = 12.sp, color = if (isFloatingOverlay) VioletAccent else TextPrimary)
+                Text("System Overlay", fontSize = 12.sp, color = if (isFloatingOverlay) VioletAccent else TextPrimary)
             }
         }
 
